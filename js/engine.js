@@ -14,6 +14,7 @@
  * a little simpler to work with.
  */
 
+
 var Engine = (function(global) {
     /* Predefine the variables we'll be using within this scope,
      * create the canvas element, grab the 2D context for that canvas
@@ -28,10 +29,12 @@ var Engine = (function(global) {
     canvas.width = 505;
     canvas.height = 606;
     doc.body.appendChild(canvas);
+    
 
     /* This function serves as the kickoff point for the game loop itself
      * and handles properly calling the update and render methods.
      */
+    var suma = 0;
     function main() {
         /* Get our time delta information which is required if your game
          * requires smooth animation. Because everyone's computer processes
@@ -39,9 +42,16 @@ var Engine = (function(global) {
          * would be the same for everyone (regardless of how fast their
          * computer is) - hurray time!
          */
+        
         var now = Date.now(),
             dt = (now - lastTime) / 1000.0;
-
+            //console.log(now);
+            suma++;
+            //console.log(suma);
+            if(suma >= 1500){
+                Star.reset();
+                suma = 0 ;
+            }
         /* Call our update/render functions, pass along the time delta to
          * our update function since it may be used for smooth animation.
          */
@@ -153,6 +163,10 @@ var Engine = (function(global) {
         });
 
         player.render();
+        Star.render();
+        
+        //Start.render(); [Part of Implemented Starting Point]
+        //var r = setInterval(Star.reset(), 60,000);
     }
 
     /* This function does nothing but it could have been a good place to
@@ -172,7 +186,21 @@ var Engine = (function(global) {
         'images/water-block.png',
         'images/grass-block.png',
         'images/enemy-bug.png',
-        'images/char-boy.png'
+        'images/char-boy.png',
+        'images/char-cat-girl.png',
+        'images/char-horn-girl.png',
+        'images/char-pink-girl.png',
+        'images/char-princess-girl.png',
+        'images/gem-blue.png',
+        'images/gem-orange.png',
+        'images/gem-orange.png',
+        'images/Heart.png',
+        'images/Key.png',
+        'images/Rock.png',
+        'images/Selector.png',
+        'images/Star.png',
+        'images/atlas.png',
+        
     ]);
     Resources.onReady(init);
 
