@@ -35,6 +35,7 @@ var Engine = (function(global) {
      * and handles properly calling the update and render methods.
      */
     var suma = 0;
+    var score = 0;
     function main() {
         /* Get our time delta information which is required if your game
          * requires smooth animation. Because everyone's computer processes
@@ -62,6 +63,7 @@ var Engine = (function(global) {
          * for the next time this function is called.
          */
         lastTime = now;
+        
 
         /* Use the browser's requestAnimationFrame function to call this
          * function again as soon as the browser is able to draw another frame.
@@ -106,7 +108,7 @@ var Engine = (function(global) {
         });
         player.update();
     }
-
+    
     /* This function initially draws the "game level", it will then call
      * the renderEntities function. Remember, this function is called every
      * game tick (or loop of the game engine) because that's how games work -

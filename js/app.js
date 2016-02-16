@@ -89,6 +89,8 @@ Player.prototype.checkCollisions = function () {
                 if(Star.x >= player.x - 30 && Star.x <= player.x + 30){
                     Star.reset();
                     self.points += 10;
+                    score = self.points;
+                    console.log("Score: " + score);
                     console.log("You now have " + self.points + " Points!");
                 }
             }
@@ -101,6 +103,8 @@ Player.prototype.checkCollisions = function () {
                 if(enemy.y === self.y){
                     if(enemy.x >= player.x - 30 && enemy.x <= player.x + 30){
                     self.reset();
+                    score = self.points;
+                    console.log("Score: " + score);
                     console.log("You Loss!, Ohh noo all my points have gone away :'( ");
                     }
                 }
@@ -135,6 +139,13 @@ Player.prototype.handleInput = function(key){
     }
 }
 
+//Setting Up Global Score Variable.
+var score = 0;
+var getPlayerScore = function(){
+    return score;
+};
+
+//Setting Up Star Feature
 var Star = function(){
     //this.xRange = [100, 350];
     //this.yRange = [300, 380];
