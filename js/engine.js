@@ -45,7 +45,7 @@ var Engine = (function(global) {
          */
         
         var now = Date.now(),
-            dt = (now - lastTime) / 1000.0;
+            datetime = (now - lastTime) / 1000.0;
             //console.log(now);
             suma++;
             //console.log(suma);
@@ -56,7 +56,7 @@ var Engine = (function(global) {
         /* Call our update/render functions, pass along the time delta to
          * our update function since it may be used for smooth animation.
          */
-        update(dt);
+        update(datetime);
         render();
 
         /* Set our lastTime variable which is used to determine the time delta
@@ -90,8 +90,8 @@ var Engine = (function(global) {
      * functionality this way (you could just implement collision detection
      * on the entities themselves within your app.js file).
      */
-    function update(dt) {
-        updateEntities(dt);
+    function update(datetime) {
+        updateEntities(datetime);
         // checkCollisions();
     }
 
@@ -102,9 +102,9 @@ var Engine = (function(global) {
      * the data/properties related to  the object. Do your drawing in your
      * render methods.
      */
-    function updateEntities(dt) {
+    function updateEntities(datetime) {
         allEnemies.forEach(function(enemy) {
-            enemy.update(dt);
+            enemy.update(datetime);
         });
         player.update();
     }
@@ -166,6 +166,7 @@ var Engine = (function(global) {
 
         player.render();
         Star.render();
+        rock.render();
         
         //Start.render(); [Part of Implemented Starting Point]
         //var r = setInterval(Star.reset(), 60,000);
