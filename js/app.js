@@ -90,6 +90,8 @@ Player.prototype.checkCollisions = function () {
                     Star.reset();
                     self.points += 10;
                     score = self.points;
+                    if(score > highscore)
+                    highscore = self.points;
                     console.log("Score: " + score);
                     console.log("You now have " + self.points + " Points!");
                 }
@@ -139,11 +141,16 @@ Player.prototype.handleInput = function(key){
     }
 }
 
-//Setting Up Global Score Variable.
+//Setting Up Global Score Variable & Highscore.
 var score = 0;
 var getPlayerScore = function(){
     return score;
 };
+
+var highscore = 0;
+var getHighScore = function(){
+    return highscore;
+}
 
 //Setting Up Star Feature
 var Star = function(){
