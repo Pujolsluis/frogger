@@ -93,8 +93,14 @@ Player.prototype.checkCollisions = function () {
             allStars.forEach(function(Star){
                 if(Star.y === self.y){
                 if(Star.x >= player.x - 30 && Star.x <= player.x + 30){
-                    Star.reset();
-                    self.points += 10;
+                    self.points += Star.points;
+                    if(Star.sprite === 'images/gem-green.png' || Star.sprite === 'images/gem-orange.png'){
+                        Star.x = -155;
+                        Star.y = -100;
+                    }
+                    else{
+                        Star.reset();
+                    }
                     score = self.points;
                     if(score > highscore)
                     highscore = self.points;
@@ -168,6 +174,7 @@ var Star = function(){
     this.yRange = [60, 140, 220, 380];
 //    this.x = 300;
 //    this.y = 380;
+    this.points = 10;
     this.spawn = 0;
     this.sprite = 'images/Star.png';
     this.reset();
@@ -191,6 +198,21 @@ Star.prototype.getRandomY = function(){
 Star.prototype.getRandomX = function(){
     return this.xRange[Math.floor(Math.random() * this.xRange.length)];
 }
+
+//Setting Up Gem Objetcs.
+var greenGem = new Star();
+    greenGem.x = -155;
+    greenGem.y = -100;
+    greenGem.points = 100;
+    greenGem.sprite = 'images/gem-green.png';
+
+var orangeGem = new Star();
+    orangeGem.x = -155;
+    orangeGem.y = -100;
+    orangeGem.points = 500;
+    orangeGem.sprite = 'images/gem-orange.png';
+
+
 
 /* Implemented Starting Point. [Must Make an image for it]
 var StartPoint = function(){
@@ -232,7 +254,7 @@ Rock.prototype.render = function(){
 var allEnemies = new Array;
 
 
-for(var i=0; i < 3; i++){
+for(var i=0; i < 4; i++){
     var temp = new Enemy();
     allEnemies[i] = temp;
 }
@@ -242,8 +264,9 @@ var player = new Player(personaje);
 var Star = new Star();
 
 var allStars = new Array;
-allStars[0] = Star;
-
+allStars.push(Star);
+allStars.push(greenGem);
+allStars.push(orangeGem);
 /* Part of Implemented Rock Object
 var rock = new Rock();
 */

@@ -36,6 +36,9 @@ var Engine = (function(global) {
      */
     var suma = 0;
     var score = 0;
+    var greensuma = 0;
+    var orangesuma = 0;
+    
     function main() {
         /* Get our time delta information which is required if your game
          * requires smooth animation. Because everyone's computer processes
@@ -52,6 +55,16 @@ var Engine = (function(global) {
             if(suma >= 1500){
                 Star.reset();
                 suma = 0 ;
+            }
+            greensuma++;
+            if(greensuma >= 2500){
+                greenGem.reset();
+                greensuma = 0;
+            }
+            orangesuma++;
+            if(orangesuma >= 3500){
+                orangeGem.reset();
+                orangesuma = 0;
             }
         /* Call our update/render functions, pass along the time delta to
          * our update function since it may be used for smooth animation.
@@ -166,6 +179,8 @@ var Engine = (function(global) {
 
         player.render();
         Star.render();
+        greenGem.render();
+        orangeGem.render();
        /* Part of Rock Implementation
        rock.render();
        */ 
@@ -196,7 +211,7 @@ var Engine = (function(global) {
         'images/char-pink-girl.png',
         'images/char-princess-girl.png',
         'images/gem-blue.png',
-        'images/gem-orange.png',
+        'images/gem-green.png',
         'images/gem-orange.png',
         'images/Heart.png',
         'images/Key.png',
