@@ -71,6 +71,8 @@ var Player = function (personaje) {
         this.sprite = 'images/char-pink-girl.png';
     else if (personaje === 'Princess Girl')
         this.sprite = 'images/char-princess-girl.png';
+    else if (personaje === 'Deadpool')
+        this.sprite = 'images/deadpool.png';
     else
         this.sprite = 'images/char-boy.png';
     this.reset();

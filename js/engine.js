@@ -166,8 +166,9 @@ var Engine = (function(global) {
 
         player.render();
         Star.render();
-        rock.render();
-        
+       /* Part of Rock Implementation
+       rock.render();
+       */ 
         //Start.render(); [Part of Implemented Starting Point]
         //var r = setInterval(Star.reset(), 60,000);
     }
@@ -203,6 +204,7 @@ var Engine = (function(global) {
         'images/Selector.png',
         'images/Star.png',
         'images/atlas.png',
+        'images/deadpool.png'
         
     ]);
     Resources.onReady(init);
