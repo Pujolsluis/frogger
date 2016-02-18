@@ -203,13 +203,13 @@ Star.prototype.getRandomX = function(){
 var greenGem = new Star();
     greenGem.x = -155;
     greenGem.y = -100;
-    greenGem.points = 100;
+    greenGem.points = 50;
     greenGem.sprite = 'images/gem-green.png';
 
 var orangeGem = new Star();
     orangeGem.x = -155;
     orangeGem.y = -100;
-    orangeGem.points = 500;
+    orangeGem.points = 100;
     orangeGem.sprite = 'images/gem-orange.png';
 
 
