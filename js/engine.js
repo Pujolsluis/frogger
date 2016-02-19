@@ -184,7 +184,8 @@ var Engine = (function(global) {
        /* Part of Rock Implementation
        rock.render();
        */ 
-        //Start.render(); [Part of Implemented Starting Point]
+        //[Part of Implemented Starting Point]
+        Start.render(); 
         //var r = setInterval(Star.reset(), 60,000);
     }
 

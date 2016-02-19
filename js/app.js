@@ -215,7 +215,7 @@ var orangeGem = new Star();
 
 
 
-/* Implemented Starting Point. [Must Make an image for it]
+// Implemented Starting Point. [Must Make an image for it]
 var StartPoint = function(){
     this.x = 200;
     this.y = 380;
@@ -225,7 +225,7 @@ var StartPoint = function(){
 StartPoint.prototype.render = function(){
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 }
-*/
+
 /* Start of Rock Implementation
 
 var Rock = function(){
@@ -272,11 +272,11 @@ allStars.push(orangeGem);
 var rock = new Rock();
 */
 
-/*
-[Part por Implemented Starting Point]
+
+//[Part por Implemented Starting Point]
 var Start = new StartPoint();
 
-*/
+
 
 
 // This listens for key presses and sends the keys to your
