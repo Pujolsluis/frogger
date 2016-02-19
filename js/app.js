@@ -138,6 +138,7 @@ Player.prototype.render = function(){
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 }
 
+
 Player.prototype.handleInput = function(key){
     if (key === 'left') {
             this.x -= (this.x - 101 < this.xRange[0]) ? 0 : 101;
@@ -175,7 +176,7 @@ var Star = function(){
 //    this.x = 300;
 //    this.y = 380;
     this.points = 10;
-    this.spawn = 0;
+//    this.spawn = 0;
     this.sprite = 'images/Star.png';
     this.reset();
 };
@@ -202,13 +203,13 @@ Star.prototype.getRandomX = function(){
 //Setting Up Gem Objetcs.
 var greenGem = new Star();
     greenGem.x = -155;
-    greenGem.y = -100;
+    greenGem.y = -150;
     greenGem.points = 50;
     greenGem.sprite = 'images/gem-green.png';
 
 var orangeGem = new Star();
     orangeGem.x = -155;
-    orangeGem.y = -100;
+    orangeGem.y = -150;
     orangeGem.points = 100;
     orangeGem.sprite = 'images/gem-orange.png';
 
