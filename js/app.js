@@ -226,7 +226,8 @@ StartPoint.prototype.render = function(){
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 }
 */
-/* Start of Rock Implementation
+
+// Start of Rock Implementation
 
 var Rock = function(){
     this.x = 100;
@@ -237,7 +238,7 @@ var Rock = function(){
 Rock.prototype.render = function(){
     ctx.drawImage(Resources.get(this.sprite), this.x,this.y);
 }
-*/
+
 
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
@@ -268,9 +269,10 @@ var allStars = new Array;
 allStars.push(Star);
 allStars.push(greenGem);
 allStars.push(orangeGem);
-/* Part of Implemented Rock Object
+
+// Part of Implemented Rock Object
 var rock = new Rock();
-*/
+
 
 /*
 [Part por Implemented Starting Point]

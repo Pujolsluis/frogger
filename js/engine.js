@@ -181,9 +181,9 @@ var Engine = (function(global) {
         Star.render();
         greenGem.render();
         orangeGem.render();
-       /* Part of Rock Implementation
-       rock.render();
-       */ 
+       // Part of Rock Implementation
+        rock.render();
+        
         //Start.render(); [Part of Implemented Starting Point]
         //var r = setInterval(Star.reset(), 60,000);
     }
